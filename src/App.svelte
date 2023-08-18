@@ -91,14 +91,16 @@
     while (document.body.firstChild) {
         document.body.removeChild(document.body.firstChild);
     }
+
+    initialised = true;
 </script>
 
 {#if initialised}
     <ImageGallery />
 {/if}
 
-<style>
-    .body {
-        text-align: center;
-    }
+<style global lang="postcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
 </style>
