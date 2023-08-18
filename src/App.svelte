@@ -1,4 +1,7 @@
 <script lang="ts">
+    import ImageGallery from "./components/ImageGallery.svelte";
+    let initialised: boolean = false;
+
     type ImageGeneration = {
         fileName: string,
         prompt: string,
@@ -90,6 +93,9 @@
     }
 </script>
 
+{#if initialised}
+    <ImageGallery />
+{/if}
 
 <style>
     .body {
