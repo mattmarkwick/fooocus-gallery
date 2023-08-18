@@ -14,6 +14,9 @@
     }
 
     const nodes: NodeList = document.querySelectorAll('div');
+    const miscData: NodeList = document.querySelectorAll('p');
+    const title: string = miscData[0].textContent;
+
     const images: ImageGeneration[] = [];
 
     nodes.forEach((node: HTMLDivElement) => {
@@ -41,49 +44,50 @@
             }
 
             if (value.textContent.includes('Prompt:')) {
-                imageGen.prompt = value.textContent;
-            }
-
-            if (value.textContent.includes('Negative Prompt:')) {
-                imageGen.negativePrompt = value.textContent;
+                if (value.textContent.includes('Negative Prompt:')) {
+                    imageGen.negativePrompt = value.textContent.replace("Negative Prompt: ", '');
+                } else {
+                    imageGen.prompt = value.textContent.replace("Prompt: ", '');
+                }
             }
 
             if (value.textContent.includes('Style:')) {
-                imageGen.style = value.textContent;
-            }
-
-            if (value.textContent.includes('Performance:')) {
-                imageGen.performance = value.textContent;
+                let valueNodes: NodeList = value.querySelectorAll('b');
+                imageGen.style = valueNodes[0].textContent;
+                imageGen.performance = valueNodes[1].textContent;
             }
 
             if (value.textContent.includes('Resolution:')) {
-                value.textContent.replace('(', '');
-                value.textContent.replace(')', '');
-                let resolution: string[] = value.textContent.split(', ');
-                imageGen.resolution = [parseInt(resolution[0].split(' ')[1]), parseInt(resolution[1])];
-            }
+                let valueNodes: NodeList = value.querySelectorAll('b');
 
-            if (value.textContent.includes('Sharpness:')) {
-                imageGen.sharpness = parseInt(value.textContent.split(' ')[1]);
+                let resolution: string[] = valueNodes[0].textContent.replace(/[()]/g, '').split(', ');
+
+                imageGen.sharpness = parseInt(valueNodes[1].textContent);
+
+                imageGen.resolution = [parseInt(resolution[0]), parseInt(resolution[1])];
             }
 
             if (value.textContent.includes('Base Model:')) {
-                imageGen.baseModel = value.textContent;
-            }
-
-            if (value.textContent.includes('Refiner Model:')) {
-                imageGen.refinerModel = value.textContent;
+                let valueNodes: NodeList = value.querySelectorAll('b');
+                imageGen.baseModel = valueNodes[0].textContent;
+                imageGen.refinerModel = valueNodes[1].textContent;
             }
 
             if (value.textContent.includes('Seed:')) {
-                imageGen.seed = value.textContent;
+                let valueNodes: NodeList = value.querySelectorAll('b');
+                imageGen.seed = valueNodes[0].textContent;
             }
         });
 
         images.push(imageGen);
+        node.remove();
     });
 
     console.log(images);
+
+    while (document.body.firstChild) {
+        document.body.removeChild(document.body.firstChild);
+    }
 </script>
 
 
