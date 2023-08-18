@@ -1,20 +1,8 @@
 <script lang="ts">
     import ImageGallery from "./components/ImageGallery.svelte";
-    let initialised: boolean = false;
+    import type ImageGeneration from "./types/ImageGeneration";
 
-    type ImageGeneration = {
-        fileName: string,
-        prompt: string,
-        negativePrompt: string,
-        style: string,
-        performance: string,
-        resolution: [number, number],
-        sharpness: number,
-        baseModel: string,
-        refinerModel: string,
-        seed: string,
-        imgSource: string,
-    }
+    let initialised: boolean = false;
 
     const nodes: NodeList = document.querySelectorAll('div');
     const miscData: NodeList = document.querySelectorAll('p');
@@ -86,7 +74,7 @@
         node.remove();
     });
 
-    console.log(images);
+    // console.log(images);
 
     while (document.body.firstChild) {
         document.body.removeChild(document.body.firstChild);
@@ -96,7 +84,7 @@
 </script>
 
 {#if initialised}
-    <ImageGallery />
+    <ImageGallery images={images} />
 {/if}
 
 <style global lang="postcss">
