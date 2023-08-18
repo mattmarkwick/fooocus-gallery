@@ -22,7 +22,13 @@ export default {
 
 		svelte({
 			preprocess: sveltePreprocess({
-				sourceMap: !production
+				sourceMap: !production,
+				postcss: {
+					plugins: [
+					 require("tailwindcss"), 
+					 require("autoprefixer"),
+					],
+				},
 			}),
 			compilerOptions: {
 				dev: !production
@@ -32,7 +38,7 @@ export default {
 		css({
 			output: 'bundle.css'
 		}),
-		
+
 		// rollup-plugin-tampermonkey-css
 		((options = {}) => ({
 			name: 'rollup-plugin-tampermonkey-css',
@@ -69,6 +75,7 @@ export default {
 
 		metablock({ file: './meta.js' }),
 	],
+	
 	watch: {
 		clearScreen: false
 	}
