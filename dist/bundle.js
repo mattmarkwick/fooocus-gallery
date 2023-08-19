@@ -2,7 +2,7 @@
 // @name        Fooocus-Gallery
 // @description Gallery for Fooocus using the log file.
 // @namespace   https://github.com/mattmarkwick/fooocus-gallery/tree/main
-// @version     1.0.1
+// @version     1.0.2
 // @homepage    https://github.com/mattmarkwick/fooocus-gallery/tree/main
 // @author      Badgerlord
 // @resource    css https:/github.com/mattmarkwick/fooocus-gallery/tree/main/dist/bundle.css
