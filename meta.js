@@ -2,7 +2,7 @@ const path = require('path');
 const { pathToFileURL } = require('url');
 const pkg = require('./package.json');
 
-const distURLBase = `https://example.com/dist`;
+const distURLBase = `https://github.com/mattmarkwick/fooocus-gallery/tree/main/dist`;
 const packageName = pkg.name;
 
 const production = !process.env.ROLLUP_WATCH;
@@ -14,7 +14,7 @@ let meta = {
     "description": pkg.description,
 	"homepage": pkg.homepage,
 	"author": pkg.author,
-    "namespace": "https://example.com",
+    "namespace": "https://github.com/mattmarkwick/fooocus-gallery/tree/main",
     "resource": {
 		css: pathToFileURL(path.join(baseUrl, 'bundle.css'))
 	},
