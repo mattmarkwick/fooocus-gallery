@@ -19,7 +19,7 @@ let meta = {
 		css: pathToFileURL(path.join(baseUrl, 'bundle.css'))
 	},
     "match": [
-        "file:///C:/AI/Stable%20Diffusion/Fooocus/Fooocus/outputs/*/log.html"
+        "file:///*/Fooocus/outputs/*/log.html"
     ],
     "grant": [
         "GM_addStyle",

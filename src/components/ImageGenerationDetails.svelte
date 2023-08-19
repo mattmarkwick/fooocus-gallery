@@ -77,8 +77,8 @@
     }
 </script>
 
-<div class="flex flex-col flex-0 w-full gap-4 py-3">
-    <div class="flex flex-col justify-center w-full group">
+<div class="flex flex-col flex-0 w-full gap-4 py-3 px-2">
+    <div class="flex flex-col justify-center w-full group ">
         <p class="text-neutral-400 text-xs uppercase leading-tight group-hover:text-neutral-300">
             Filename
         </p>

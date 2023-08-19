@@ -78,7 +78,7 @@
 
 <div class="relative flex flex-col h-full w-full overflow-y-hidden">
     <div class="py-20 px-44 flex flex-1 w-screen h-full justify-center bg-gradient-to-b from-neutral-900 to-neutral-950">
-        <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full h-16 bg-gradient-to-b from-neutral-950 to-transparent px-6 py-3">
+        <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full bg-gradient-to-b from-indigo-950 to-transparent py-3 px-6">
             <h1 class="text-lg text-neutral-400 font-bold">Fooocus Gallery</h1>
             <h2 class="text-lg text-neutral-400 font-bold">{ title.replace("Fooocus Log", "").replace(" (private)", "") }</h2>
             <div class="flex gap-2">
@@ -99,11 +99,11 @@
                 </button>
             </div>
         </nav>
-        <div class="flex mx-auto items-center gap-6 px-3 h-[95%]">
+        <div class="flex mx-auto items-center gap-6 px-3 h-[95%] mt-10">
             <div class="w-1/3 h-full flex items-center">
                 <ImageGenerationDetails image={selectedImage} />
             </div>
-            <div class="gallery grid gap-6 overflow-y-scroll overflow-x-hidden px-6 py-6 h-full"
+            <div class="gallery grid gap-6 overflow-y-scroll overflow-x-hidden px-6 py-6 h-full border-l-2 border-indigo-950"
                  style="grid-template-columns: repeat({10 - imagesPerRow}, minmax(0, 1fr));"        
             >
                 {#each images as image}
