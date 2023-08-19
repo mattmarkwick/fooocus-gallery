@@ -79,7 +79,7 @@
 <div class="relative flex flex-col h-full w-full overflow-y-hidden">
     <div class="py-20 px-44 flex flex-1 w-screen h-full justify-center bg-gradient-to-b from-neutral-900 to-neutral-950">
         <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full h-16 bg-gradient-to-b from-neutral-950 to-transparent px-6 py-3">
-            <h1 class="text-lg text-neutral-400 font-bold">Fooocus Gallery</h1>
+            <h1 class="text-lg text-neutral-400 font-bold">Fooocus Gallery is cool</h1>
             <h2 class="text-lg text-neutral-400 font-bold">{ title.replace("Fooocus Log", "").replace(" (private)", "") }</h2>
             <div class="flex gap-2">
                 <div class="flex flex-col justify-between items-center">
