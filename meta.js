@@ -2,7 +2,7 @@ const path = require('path');
 const { pathToFileURL } = require('url');
 const pkg = require('./package.json');
 
-const distURLBase = `https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/7b125688bf5e9be4be825f210ca3edc66246ff7c/dist`;
+const distURLBase = "https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/7b125688bf5e9be4be825f210ca3edc66246ff7c/dist";
 const packageName = pkg.name;
 
 const production = !process.env.ROLLUP_WATCH;
