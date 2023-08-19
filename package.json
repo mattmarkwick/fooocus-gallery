@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Gallery for Fooocus using the log file.",
   "author": "Badgerlord",
-  "homepage": "https://github.com/mattmarkwick/fooocus-gallery/tree/main",
+  "homepage": "https://github.com/mattmarkwick/fooocus-gallery/",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
