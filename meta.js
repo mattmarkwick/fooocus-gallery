@@ -16,7 +16,7 @@ let meta = {
 	"author": pkg.author,
     "namespace": "https://github.com/mattmarkwick/fooocus-gallery/",
     "resource": {
-		css: pathToFileURL(path.join(baseUrl, 'bundle.css'))
+		css: pathToFileURL(path.join(path.join(baseUrl, 'bundle.css'), '?token=$(date +%s)'))
 	},
     "match": [
         "file:///C:/AI/Stable%20Diffusion/Fooocus/Fooocus/outputs/*/log.html"
@@ -38,8 +38,8 @@ if(!production){
 }
 
 if(production) {
-	meta.downloadURL = pathToFileURL(path.join(baseUrl, 'bundle.js'));
-	meta.updateURL = pathToFileURL(path.join(baseUrl, 'bundle.js'));
+	meta.downloadURL = pathToFileURL(path.join(path.join(baseUrl, 'bundle.js'), '?token=$(date +%s)'));
+	meta.updateURL = pathToFileURL(path.join(path.join(baseUrl, 'bundle.js'), '?token=$(date +%s)'));
 }
 
 module.exports = meta;

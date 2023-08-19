@@ -5,11 +5,11 @@
 // @version     1.0.2
 // @homepage    https://github.com/mattmarkwick/fooocus-gallery/
 // @author      Badgerlord
-// @resource    css https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.css
+// @resource    css https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.css/%3Ftoken=$(date%20+%25s)
 // @match       file:///C:/AI/Stable%20Diffusion/Fooocus/Fooocus/outputs/*/log.html
 // @run-at      document-idle
-// @downloadURL https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js
-// @updateURL   https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js
+// @downloadURL https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js/%3Ftoken=$(date%20+%25s)
+// @updateURL   https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js/%3Ftoken=$(date%20+%25s)
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
 // @grant       GM_xmlhttpRequest
