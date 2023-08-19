@@ -7,7 +7,7 @@
 
     export let title: string = '';
 
-    let imageSize: number = 25;
+    let imagesPerRow: number = 5;
 
     let selectedImage: ImageGeneration = images[0];
 
@@ -16,6 +16,27 @@
     function expandImage(image: ImageGeneration) {
         selectedImage = image;
         expand = true;
+    }
+
+    function toggleFullscreen() {
+        if (!window.screenTop && !window.screenY) {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+
+        let elem: HTMLElement = document.body;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
     }
 
     document.body.addEventListener('keydown', (event: KeyboardEvent) => {
@@ -57,14 +78,34 @@
 
 <div class="relative flex flex-col h-full w-full overflow-y-hidden">
     <div class="py-20 px-44 flex flex-1 w-screen h-full justify-center bg-gradient-to-b from-neutral-900 to-neutral-950">
-        <nav class="absolute top-0 inset-x-0 w-full h-16 bg-gradient-to-b from-neutral-950 to-transparent px-6 py-3 text-center">
-            <h1 class="text-lg text-neutral-400 font-bold">{ title }</h1>
+        <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full h-16 bg-gradient-to-b from-neutral-950 to-transparent px-6 py-3">
+            <h1 class="text-lg text-neutral-400 font-bold">Fooocus Gallery</h1>
+            <h2 class="text-lg text-neutral-400 font-bold">{ title.replace("Fooocus Log", "").replace(" (private)", "") }</h2>
+            <div class="flex gap-2">
+                <div class="flex flex-col justify-between items-center">
+                    <label for="cell-size" class="text-neutral-400 text-sm">Image size</label>
+                    <input type="range" id="cell-size" class="accent-neutral-800 rounded text-neutral-950" min="1" max="10" bind:value={imagesPerRow}>
+                </div>
+                <button on:click={() => toggleFullscreen()}
+                        class="text-neutral-400 hover:text-neutral-300" title="Full screen">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-neutral-400" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 16m0 1a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1z" />
+                        <path d="M4 12v-6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-6" />
+                        <path d="M12 8h4v4" />
+                        <path d="M16 8l-5 5" />
+                    </svg>
+                </button>
+            </div>
         </nav>
         <div class="flex mx-auto items-center gap-6 px-3 h-[95%]">
             <div class="w-1/3 h-full flex items-center">
                 <ImageGenerationDetails image={selectedImage} />
             </div>
-            <div class="gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 overflow-y-scroll overflow-x-hidden px-6 py-6 h-full">
+            <div class="gallery grid gap-6 overflow-y-scroll overflow-x-hidden px-6 py-6 h-full"
+                 style="grid-template-columns: repeat({10 - imagesPerRow}, minmax(0, 1fr));"        
+            >
                 {#each images as image}
                     <div class="flex justify-between items-center">
                         <div class="relative group">
