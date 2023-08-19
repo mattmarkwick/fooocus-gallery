@@ -84,7 +84,7 @@
 </script>
 
 {#if initialised}
-    <ImageGallery images={images} />
+    <ImageGallery images={images} title={title} />
 {/if}
 
 <style global lang="postcss">
