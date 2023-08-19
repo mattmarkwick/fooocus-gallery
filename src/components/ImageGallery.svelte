@@ -107,9 +107,10 @@
                  style="grid-template-columns: repeat({10 - imagesPerRow}, minmax(0, 1fr));"        
             >
                 {#each images as image}
-                    <div class="flex justify-between items-center">
+                    <div id={image.fileName}
+                         class="flex justify-between items-center">
                         <div class="relative group">
-                            <img on:click={() => selectedImage = image}
+                            <img on:click={() => selectedImage = image} on:error={() => document.getElementById(image.fileName).style.display = 'none'}
                                  src={image.imgSource} alt="{image.fileName}" width="{image.resolution[0]}" height="{image.resolution[1]}"
                                  class="rounded shadow-lg h-auto max-w-full cursor-pointer hover:opacity-75 transition ease-in-out duration-150
                                  {selectedImage === image ? 'ring-2 ring-white ring-offset-4 ring-offset-neutral-900' : ''}"
