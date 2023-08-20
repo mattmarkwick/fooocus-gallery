@@ -77,17 +77,17 @@
 </script>
 
 <div class="relative flex flex-col h-full w-full overflow-y-hidden">
-    <div class="py-20 px-44 flex flex-1 w-screen h-full justify-center bg-gradient-to-b from-neutral-900 to-neutral-950">
-        <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full bg-gradient-to-b from-indigo-950 to-transparent py-3 px-6">
-            <h1 class="text-lg text-neutral-400 font-bold">Fooocus Gallery</h1>
-            <h2 class="text-lg text-neutral-400 font-bold">{ title.replace("Fooocus Log", "").replace(" (private)", "") }</h2>
+    <div class="py-20 md:px-20 lg:px-28 xl:px-44 flex flex-1 w-screen h-full justify-center bg-gradient-to-b from-neutral-900 to-neutral-950">
+        <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full bg-gradient-to-b from-transparent via-90% via-transparent to-indigo-950 py-3 px-6 border-b border-indigo-950 shadow-xl">
+            <h1 class="text-lg text-neutral-400 font-bold">Fooocus <span class="text-indigo-900">Gallery</span></h1>
+            <h2 class=" text-neutral-400">{ title.replace("Fooocus Log", "").replace(" (private)", "") }</h2>
             <div class="flex gap-2">
-                <div class="flex flex-col justify-between items-center">
-                    <label for="cell-size" class="text-neutral-400 text-sm">Image size</label>
-                    <input type="range" id="cell-size" class="accent-neutral-800 rounded text-neutral-950" min="1" max="10" bind:value={imagesPerRow}>
+                <div class="flex flex-col justify-between items-center z-30">
+                    <label for="image-size" class="text-neutral-400 text-sm">Image size</label>
+                    <input type="range" id="image-size" class="accent-neutral-800 rounded text-neutral-950" min="1" max="10" bind:value={imagesPerRow} />
                 </div>
                 <button on:click={() => toggleFullscreen()}
-                        class="text-neutral-400 hover:text-neutral-300" title="Full screen">
+                        class="text-neutral-400 hover:text-neutral-300 border border-transparent hover:border-neutral-400 rounded-lg p-1" title="Full screen">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-neutral-400" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -103,14 +103,14 @@
             <div class="w-1/3 h-full flex items-center">
                 <ImageGenerationDetails image={selectedImage} />
             </div>
-            <div class="gallery grid gap-6 overflow-y-scroll overflow-x-hidden px-6 py-6 h-full border-l-2 border-indigo-950"
+            <div class="relative hide-scrollbar grid gap-6 overflow-y-scroll px-6 py-6 h-full border-l-2 border-indigo-950"
                  style="grid-template-columns: repeat({10 - imagesPerRow}, minmax(0, 1fr));"        
             >
                 {#each images as image}
                     <div id={image.fileName}
                          class="flex justify-between items-center">
-                        <div class="relative group">
-                            <img on:click={() => selectedImage = image} on:error={() => document.getElementById(image.fileName).style.display = 'none'}
+                        <div class="relative group rounded">
+                            <img on:click={() => selectedImage = image} on:error={(e) => document.getElementById(image.fileName).style.display = 'none'}
                                  src={image.imgSource} alt="{image.fileName}" width="{image.resolution[0]}" height="{image.resolution[1]}"
                                  class="rounded shadow-lg h-auto max-w-full cursor-pointer hover:opacity-75 transition ease-in-out duration-150
                                  {selectedImage === image ? 'ring-2 ring-white ring-offset-4 ring-offset-neutral-900' : ''}"
@@ -135,11 +135,5 @@
 </div>
 
 <style>
-    .gallery::-webkit-scrollbar{
-        display: none;
-    }
-    .gallery {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+    
 </style>
