@@ -21,6 +21,10 @@ Built with Svelte and Tailwind.
  - Or copy the prompt... with style! 😎
    ![image](https://github.com/mattmarkwick/fooocus-gallery/assets/52632226/6894ee8d-fb66-4ff3-88be-c19de3f9090f)
 
+## Usage
+
+ - Once installed (see below), you can simply open the `log.html` file that Fooocus creates in the folder with all your images. The script should auto detect and convert the page from plaintext into the gallery.
+
 
 ## Installation
 
