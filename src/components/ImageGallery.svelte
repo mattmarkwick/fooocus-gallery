@@ -76,7 +76,7 @@
     });
 </script>
 
-<div class="relative flex flex-col h-full w-full overflow-y-hidden">
+<div class="relative flex flex-col h-screen w-full overflow-y-hidden">
     <div class="py-20 md:px-20 lg:px-28 xl:px-44 flex flex-1 w-screen h-full justify-center bg-gradient-to-b from-neutral-900 to-neutral-950">
         <nav class="flex justify-between items-center absolute top-0 inset-x-0 w-full bg-gradient-to-b from-transparent via-90% via-transparent to-indigo-950 py-3 px-6 border-b border-indigo-950 shadow-xl">
             <h1 class="text-lg text-neutral-400 font-bold">Fooocus <span class="text-indigo-900">Gallery</span></h1>
