@@ -69,4 +69,4 @@ npm run dev
 ```
 Then copy the header of `dist/bundle.js` into a new script in Tampermonkey.
 
-To build run `npm run build`. I have found that I need to make a couple of manual adjustments to the header of bundle.js after the build step as the path URIs aren't quite right.
+To build run `npm run build`.
