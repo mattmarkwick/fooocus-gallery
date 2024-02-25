@@ -9,6 +9,11 @@ V2 Update!
  - Update style bank with all current styles in Fooocus.
  - Fixed issue with upscaled images not adhering to the screen size - they now scale to fit and don't need to be scrolled.
 
+### How To update
+Simply use Tampermonkey to check for updates on this script. In theory, it should auto update if you have that checked, but for me I haven't seen this working so I just open the script and go File->Check for updates.
+
+---
+
 This is a Tampermonkey script that converts the Fooocus daily log file into a more useable gallery for your images.
 Built with Svelte and Tailwind.
 
