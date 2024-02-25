@@ -16,10 +16,11 @@ let meta = {
 	"author": pkg.author,
     "namespace": "https://github.com/mattmarkwick/fooocus-gallery/",
     "resource": {
-		css: pathToFileURL(path.join(baseUrl, 'bundle.css'))
+		css: baseUrl + 'bundle.css',
 	},
     "match": [
-        "file:///*/Fooocus/outputs/*/log.html"
+        "file:///*/Fooocus/outputs/*/log.html",
+        "http://*/file=*/Fooocus/outputs/*/log.html"
     ],
     "grant": [
         "GM_addStyle",
@@ -38,8 +39,8 @@ if(!production){
 }
 
 if(production) {
-	meta.downloadURL = pathToFileURL(path.join(baseUrl, 'bundle.js'));
-	meta.updateURL = pathToFileURL(path.join(baseUrl, 'bundle.js'));
+    meta.downloadURL = baseUrl + 'bundle.js';
+    meta.updateURL = baseUrl + 'bundle.js';
 }
 
 module.exports = meta;
