@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name        Fooocus-Gallery
+// @name        fooocus-gallery
 // @description Gallery for Fooocus using the log file.
 // @namespace   https://github.com/mattmarkwick/fooocus-gallery/
-// @version     1.0.3
+// @version     2.0.0
 // @homepage    https://github.com/mattmarkwick/fooocus-gallery/
 // @author      Badgerlord
-// @resource    css file:///C:/Users/mattm/Projects/fooocus-gallery/https:/raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.css
+// @resource    css https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.css
 // @match       file:///*/Fooocus/outputs/*/log.html
 // @match       http://*/file=*/Fooocus/outputs/*/log.html
 // @run-at      document-idle
-// @downloadURL file:///C:/Users/mattm/Projects/fooocus-gallery/https:/raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js
-// @updateURL   file:///C:/Users/mattm/Projects/fooocus-gallery/https:/raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js
+// @downloadURL https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js
+// @updateURL   https://raw.githubusercontent.com/mattmarkwick/fooocus-gallery/main/dist/bundle.js
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
 // @grant       GM_xmlhttpRequest
