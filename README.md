@@ -1,5 +1,14 @@
 # Fooocus Gallery
 
+V2 Update!
+ - It works again!
+ - Updated to parse the new format of the private log html file.
+ - Now displays info on loras, sampler, scheduler etc...
+ - Will now detect the log when opened from the link inside Fooocus.
+ - Support for multiple styles and the V2 expansion.
+ - Update style bank with all current styles in Fooocus.
+ - Fixed issue with upscaled images not adhering to the screen size - they now scale to fit and don't need to be scrolled.
+
 This is a Tampermonkey script that converts the Fooocus daily log file into a more useable gallery for your images.
 Built with Svelte and Tailwind.
 
